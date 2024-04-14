@@ -1,0 +1,124 @@
+Columns; //
+
+$table->bigIncrements('column_name'); // Auto-incrementing UNSIGNED BIGINT (primary key) equivalent column.
+$table->bigInteger('column_name'); // BIGINT equivalent column.
+$table->binary('column_name'); // BLOB equivalent column.
+$table->boolean('column_name'); // BOOLEAN equivalent column.
+$table->char('column_name', $length); // CHAR equivalent column with a fixed length.
+$table->date('column_name'); // DATE equivalent column.
+$table->dateTime('column_name'); // DATETIME equivalent column.
+$table->decimal('column_name', $totalDigits, $decimalDigits); // DECIMAL equivalent column with a precision (total digits) and scale (decimal digits).
+$table->double('column_name', $totalDigits, $decimalDigits); // DOUBLE equivalent column with a precision (total digits) and scale (decimal digits).
+$table->enum('column_name', $allowedValues); // ENUM equivalent column with allowed values.
+$table->float('column_name', $totalDigits, $decimalDigits); // FLOAT equivalent column with a precision (total digits) and scale (decimal digits).
+$table->increments('column_name'); // Auto-incrementing UNSIGNED INTEGER (primary key) equivalent column.
+$table->integer('column_name'); // INTEGER equivalent column.
+$table->json('column_name'); // JSON equivalent column.
+$table->jsonb('column_name'); // JSONB equivalent column.
+$table->longText('column_name'); // LONGTEXT equivalent column.
+$table->mediumInteger('column_name'); // MEDIUMINT equivalent column.
+$table->mediumText('column_name'); // MEDIUMTEXT equivalent column.
+$table->morphs('column_name'); // Adds INTEGER column_nameable_id and STRING column_nameable_type equivalent columns.
+$table->nullableTimestamps(); // Adds nullable created_at and updated_at TIMESTAMP equivalent columns.
+$table->smallIncrements('column_name'); // Auto-incrementing UNSIGNED SMALLINT (primary key) equivalent column.
+$table->smallInteger('column_name'); // SMALLINT equivalent column.
+$table->softDeletes(); // Adds a deleted_at TIMESTAMP equivalent column for soft deletes.
+$table->string('column_name', $length); // VARCHAR equivalent column with a variable length.
+$table->text('column_name'); // TEXT equivalent column.
+$table->time('column_name'); // TIME equivalent column.
+$table->timestamp('column_name'); // TIMESTAMP equivalent column.
+$table->timestamps(); // Adds created_at and updated_at TIMESTAMP equivalent columns.
+$table->uuid('column_name'); // UUID equivalent column.
+$table->blob('content'); // Defines a BLOB column named 'content'
+  
+Modifiers; //
+
+$table->charset('charset'); // Sets the default character set for the table.
+$table->collation('collation'); // Sets the default collation for the table.
+$table->comment('comment'); // Sets the table comment.
+$table->engine('engine'); // Sets the table storage engine.
+Indexes; //
+
+$table->index('columns'); // Adds an index for the given columns.
+$table->primary('columns'); // Adds a primary key constraint to the table.
+$table->unique('columns'); // Adds a unique constraint to the table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Increments; //
+
+$table->increments('id'); // Alias for $table->id(); creates an auto-incrementing primary key column.
+UUID Columns; //
+
+$table->uuid('column_name'); // Defines a UUID column.
+IP Address Columns; //
+
+$table->ipAddress('column_name'); // Defines an IP address column.
+MAC Address Columns; //
+
+$table->macAddress('column_name'); // Defines a MAC address column.
+JSON Columns; //
+
+$table->json('column_name'); // Defines a JSON column.
+Virtual Columns; //
+
+$table->virtualAs('expression', 'column_name'); // Defines a virtual (computed) column based on an SQL expression.
+Stored Columns; //
+
+$table->storedAs('expression', 'column_name'); // Defines a stored (computed and persisted) column based on an SQL expression.
+Custom Data Types; //
+
+$table->addColumn('data_type', 'column_name'); // Adds a column with a custom data type.
+Custom Column Types; //
+
+$table->addColumn('custom', 'column_name'); // Adds a column with a custom column type.
+Geometry Columns; //
+
+$table->geometry('column_name'); // Defines a geometry column for spatial data.
+
+
+Primary Key; //
+
+$table->id(); // Creates an auto-incrementing integer primary key.
+Columns; //
+
+$table->string('column_name'); // Defines a string column.
+$table->integer('column_name'); // Defines an integer column.
+$table->bigInteger('column_name'); // Defines a big integer column.
+$table->text('column_name'); // Defines a text column.
+$table->boolean('column_name'); // Defines a boolean column.
+$table->float('column_name', 8, 2); // Defines a float column with 8 total digits and 2 digits after the decimal point.
+$table->decimal('column_name', 8, 2); // Defines a decimal column with 8 total digits and 2 digits after the decimal point.
+$table->dateTime('column_name'); // Defines a datetime column.
+$table->date('column_name'); // Defines a date column.
+$table->time('column_name'); // Defines a time column.
+Modifiers; //
+
+$table->nullable(); // Allows the column to have NULL values.
+$table->default($value); // Sets a default value for the column.
+$table->unsigned(); // Defines an unsigned integer column.
+Indexes; //
+
+$table->index('column_name'); // Creates an index on the specified column.
+$table->unique('column_name'); // Creates a unique index on the specified column.
+$table->primary('column_name'); // Defines the primary key for the table.
+Foreign Keys; //
+
+$table->foreign('column_name')->references('id')->on('related_table')->onDelete('cascade'); // Creates a foreign key constraint.
+Special Types; //
+
+$table->timestamps(); // Creates created_at and updated_at columns for tracking record creation and update times.
+$table->softDeletes(); // Adds a deleted_at column for soft deletes.
+
+
+$table->string('column_name', 50)->nullable()->default('default_value');
