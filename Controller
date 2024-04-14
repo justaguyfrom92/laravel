@@ -1,0 +1,3 @@
+php artisan make:controller ProductController --resource
+
+This will generate a controller with all necessary methods for CRUD operations. You can then define routes using the Route::resource method in your routes/web.php file.
