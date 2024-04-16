@@ -1,3 +1,7 @@
+return view('map.create')->with('success', "message");
+
+
+
 session()->flash('success', 'Action completed with 0 errors');
 
 
