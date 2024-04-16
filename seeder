@@ -1,0 +1,27 @@
+php artisan make:seeder {{name}}Seeder
+
+nano database/seeders/{{name}}Seeder
+
+//must include 
+use Faker\Factory as Faker;
+
+//running for 50  entries
+$faker = Faker::create();
+
+for ($i = 0; $i < 50; $i++)
+{
+    Event::create([
+        'name' => $faker->sentence,
+        'description' => $faker->paragraph,
+        'start_date' => $faker->dateTimeBetween('now', '+1 year'),
+        'end_date' => $faker->dateTimeBetween('now', '+2 years'),
+        'capacity' => $faker->numberBetween(10, 100),
+        'series' => $faker->word,
+        'isActive' => $faker->boolean,
+    ]);
+}
+
+or 
+php artisan db:seed --class={{name}}Seeder --count=50
+//using from the command line
+
