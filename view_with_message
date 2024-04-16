@@ -1,0 +1,37 @@
+session()->flash('success', 'Action completed with 0 errors');
+
+
+return redirect()->back()->with('success', ["message"]);
+
+@if(session('success'))
+@foreach(session('success') as $success)
+            <script>
+                    toastr.success("{{ $success }}");
+                 </script>
+@endforeach
+@endif
+
+
+return view('protected.standardUser.includes.documents')->with('documents', $documents)->with('successMsg','Property is updated .');
+@if(!empty($successMsg))
+  <div class="alert alert-success"> {{ $successMsg }}</div>
+@endif
+
+
+ $request->session()->flash('successMsg','Saved succesfully!'); 
+ @if(Session::has('successMsg'))
+    <div class="alert alert-success"> {{ Session::get('successMsg') }}</div>
+  @endif
+
+
+
+
+
+
+
+
+
+
+
+
+
