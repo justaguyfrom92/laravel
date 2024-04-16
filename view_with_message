@@ -1,4 +1,7 @@
-return view('map.create')->with('success', "message");
+return view('map.create')->with('message', $yourMessage);
+{{ $message }}
+
+
 
 
 
