@@ -1,0 +1,29 @@
+Open your RouteServiceProvider located in app/Providers/RouteServiceProvider.php.
+
+Inside the boot method, add the fallback method to define a fallback route for all routes not matched by any other route definition. This route will handle the 404 errors:
+ "Route::fallback(function () {
+        abort(404, 'Page not found');
+    });
+"
+
+
+
+public function boot()
+{
+    $this->configureRateLimiting();
+
+    Route::pattern('id', '[0-9]+');
+
+    Route::middleware('web')
+        ->namespace($this->namespace)
+        ->group(base_path('routes/web.php'));
+
+    Route::fallback(function () {
+        // Handle 404 Not Found error here
+        abort(404, 'Page not found');
+    });
+}
+
+
+
+might want to log or create a middleware for this!
