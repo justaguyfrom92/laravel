@@ -1,0 +1,13 @@
+{{route('map.show', $map->id)}}
+http://18.221.138.91/map/1
+
+{{route('map.show', [$map->id, $map->id])}}
+http://18.221.138.91/map/1?1
+
+
+{{ route('map.show', ['map' => $map, 'id' => 'specific_text_' . $map->id, 'name' => $map->name]) }}
+http://18.221.138.91/map/1?id=specific_text_1&name=FIRST
+
+
+Route::get('/map/show/{map}/edits/{additionalItem}', 'MapController@show')->name('map.show');
+{{ route('map.show', ['map' => $map->id, 'additionalItem' => $additionalItem->id]) }}
