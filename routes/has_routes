@@ -1,0 +1,6 @@
+@if (Route::has('login')) // refers to route name
+
+Route::get('/login', function () {
+echo 'THANKS FOR TRYING TO LOG IN!';
+})->name('login');
+
