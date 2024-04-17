@@ -1,0 +1,8 @@
+Route::resource('map', MapController::class)->names('map');
+
+should show 
+map/create
+map/{{id}}/destroy
+map/{{id}}
+map/{{edit}}/edit
+etc.....
