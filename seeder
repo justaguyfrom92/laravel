@@ -25,3 +25,20 @@ or
 php artisan db:seed --class={{name}}Seeder --count=50
 //using from the command line
 
+
+
+
+
+
+
+
+Faker offers a couple of methods that let you replace placeholders in a given string with random characters:
+
+lexify - takes given string and replaces ? with random letters
+asciify - takes given string and replaces * with random ascii characters
+numerify - takes given string and replaces # with random digits
+bothify - combines the lexify and numerify
+You could try to use one of them, depending on the requirements you have for that random string you need. asciify uses the largest set of characters as replacement so using that one makes most sense.
+
+The following will give you a random string of 20 ascii characters:
+$faker->asciify('********************')
